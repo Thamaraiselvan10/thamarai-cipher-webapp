@@ -13,7 +13,7 @@
   <br />
   <br />
   <!-- IMPORTANT: Add your live demo link here! -->
-  <a href="[YOUR-LIVE-DEMO-LINK]"><strong>View Live Demo »</strong></a>
+  <a href="https://thamaraiselvan10.github.io/thamarai-cipher-webapp/home.html"><strong>View Live Demo »</strong></a>
   <br />
   <br />
 </p>
