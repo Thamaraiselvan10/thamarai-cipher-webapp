@@ -1,0 +1,223 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #16213e, #0f3460, #533483, #e94560);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 5s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.cipher-card {
+    background-color: #16213e;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #0f3460;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#message {
+    flex-grow: 1; /* Message input takes up the remaining space */
+}
+
+#shift {
+    width: 80px; /* Shift input has a fixed, smaller width */
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #0f3460;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #e94560;
+    box-shadow: 0 0 15px #e94560;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    padding: 12px 25px;
+    border: 2px solid #e94560;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #e94560;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    color: #fff;
+    background-color: #e94560;
+    box-shadow: 0 0 20px #e94560;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+.result-container {
+    background-color: #1a1a2e;
+    padding: 1rem;
+    border-radius: 8px;
+    min-height: 80px; /* Increased height for better spacing */
+    border: 1px dashed #0f3460;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content */
+}
+
+#result-title {
+    margin: 0 0 0.5rem 0;
+    color: #e94560;
+}
+
+.result-text-wrapper {
+    display: inline-block; /* Makes the wrapper fit its content */
+}
+
+#result-text {
+    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    word-wrap: break-word;
+    border-right: .15em solid #e94560;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    letter-spacing: .1em;
+    width: 0; /* Start with 0 width */
+}
+
+#result-text.animate {
+    animation: typing 2s steps(40, end) forwards, blink-caret .75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Cursor animation */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #e94560; }
+}
+
+/* =================================== */
+/*      Mobile Responsive Styles       */
+/* =================================== */
+
+@media (max-width: 768px) {
+
+    /* Add some padding to the main container so it doesn't touch the screen edges */
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Reduce the size of the main title and paragraph to fit smaller screens */
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    /* Adjust padding inside the main card for a better fit */
+    .cipher-card {
+        padding: 2rem 1.5rem;
+    }
+
+    /* --- Key Change for Inputs --- */
+    /* Stack the message and shift inputs vertically instead of side-by-side */
+    .input-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Make the shift input full-width when it's stacked */
+    #shift {
+        width: 100%;
+        /* Ensures padding doesn't make it wider than 100% */
+        box-sizing: border-box; 
+    }
+
+    /* Give the buttons a bit more space on mobile */
+    .buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    /* Make the result text slightly smaller for better readability on narrow screens */
+    #result-text {
+        font-size: 1.1rem;
+    }
+}
