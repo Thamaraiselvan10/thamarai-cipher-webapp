@@ -4,7 +4,8 @@
 <!-- You can create a simple banner using canva.com or upload a screen recording GIF -->
 <!-- To create a GIF, use a free tool like Giphy Capture or ScreenToGif -->
 <p align="center">
-  <img src="[LINK-TO-YOUR-PROJECT-GIF-OR-BANNER-IMAGE]" alt="Thamarai's Cipher in action" width="800"/>
+  <img width="900" height="800" alt="image1" src="https://github.com/user-attachments/assets/28092da7-6e19-4e06-906f-2c71a028cf06" />
+
 </p>
 
 <p align="center">
@@ -57,14 +58,14 @@ Want to run this project locally? It's simple!
 
 1.  **Clone the repository:**
     ```sh
-    git clone https://github.com/[YOUR-GITHUB-USERNAME]/thamarai-cipher.git
+    git clone https://github.com/Thamaraiselvan10/thamarai-cipher-webapp.git
     ```
 2.  **Navigate to the project directory:**
     ```sh
     cd thamarai-cipher
     ```
-3.  **Open `index.html` in your browser:**
-    Just double-click the `index.html` file, and you're good to go!
+3.  **Open `home.html` in your browser:**
+    Just double-click the `home.html` file, and you're good to go!
 
 ---
 
